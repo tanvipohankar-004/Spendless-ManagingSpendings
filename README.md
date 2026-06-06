@@ -32,14 +32,14 @@ https://spendless-managingspendings.netlify.app/
 ---
 
 ## 📂 Project Structure
-
+```
 spendless/
 │
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
-
+```
 ---
 
 ## ⚙️ How It Works
