@@ -1,1085 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <!-- ====================================== -->
-  <!-- META -->
-  <!-- ====================================== -->
-
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <title>SpendLess | Track Every Penny Wisely</title>
 
-  <title>SpendLess</title>
+  <link rel="icon" type="image/png" href="fevicon.png" />
+  <link rel="shortcut icon" href="fevicon.png" type="image/png" />
 
-
-  <!-- ====================================== -->
-  <!-- GOOGLE FONT -->
-  <!-- ====================================== -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
-
-  <!-- ====================================== -->
-  <!-- REMIX ICONS -->
-  <!-- ====================================== -->
-
   <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet"
   />
-
-
-  <!-- ====================================== -->
-  <!-- CHART JS -->
-  <!-- ====================================== -->
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-  <!-- ====================================== -->
-  <!-- FULL CALENDAR -->
-  <!-- ====================================== -->
 
   <link
     href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css"
     rel="stylesheet"
   />
 
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
-
-
-  <!-- ====================================== -->
-  <!-- FAVICON -->
-  <!-- ====================================== -->
-
-  <link
-    rel="icon"
-    href="https://www.istockphoto.com/photo/three-dimensional-3d-gold-colored-golden-shiny-inr-rupee-sign-or-indian-currency-gm2234140492-649590172?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Flogo-s&utm_term=logo+s%3A%3A%3A%3A07b85973-b0f9-4531-b29c-7fd371f35c00"
-  />
-
-
-  <!-- ====================================== -->
-  <!-- CSS -->
-  <!-- ====================================== -->
-
   <link rel="stylesheet" href="style.css" />
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
-
 <body>
-
-
-  <!-- ====================================== -->
-  <!-- APP -->
-  <!-- ====================================== -->
-
   <div class="app-layout">
-
-
-    <!-- ====================================== -->
-    <!-- SIDEBAR -->
-    <!-- ====================================== -->
-
     <aside class="sidebar">
-
-
-      <!-- LOGO -->
-
-      <div class="brand-area">
-
-        <div class="brand-logo">
-          S
-        </div>
-
-        <div>
-
-          <h1>SpendLess</h1>
-
-          <p>
-            Track every penny wisely.
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- NAVIGATION -->
-
-      <nav class="sidebar-nav">
-
-
-        <button
-          class="nav-item active-nav"
-          data-section="overview-section"
-        >
-
-          <i class="ri-dashboard-horizontal-line"></i>
-
-          <span>Overview</span>
-
-        </button>
-
-
-        <button
-          class="nav-item"
-          data-section="transactions-section"
-        >
-
-          <i class="ri-exchange-funds-line"></i>
-
-          <span>Transactions</span>
-
-        </button>
-
-
-        <button
-          class="nav-item"
-          data-section="calendar-section"
-        >
-
-          <i class="ri-calendar-event-line"></i>
-
-          <span>Calendar</span>
-
-        </button>
-
-
-        <button
-          class="nav-item"
-          data-section="budgets-section"
-        >
-
-          <i class="ri-pie-chart-line"></i>
-
-          <span>Budgets</span>
-
-        </button>
-
-
-        <button
-          class="nav-item"
-          data-section="profile-section"
-        >
-
-          <i class="ri-user-3-line"></i>
-
-          <span>Profile</span>
-
-        </button>
-
-      </nav>
-
-
-
-      <!-- FINANCE HEALTH -->
-
-      <div class="finance-health-card">
-
-        <div class="health-top">
-
-          <span>
-            Financial Health
-          </span>
-
-          <strong id="health-score">
-            82%
-          </strong>
-
-        </div>
-
-
-        <div class="health-progress">
-
-          <div
-            id="health-fill"
-            class="health-fill"
-          ></div>
-
-        </div>
-
-
-        <p id="health-message">
-          Excellent Saving Habit
-        </p>
-
-      </div>
-
-    </aside>
-
-
-
-    <!-- ====================================== -->
-    <!-- MAIN CONTENT -->
-    <!-- ====================================== -->
-
-    <main class="main-content">
-
-
-      <!-- ====================================== -->
-      <!-- HEADER -->
-      <!-- ====================================== -->
-
-      <header class="main-header">
-
-
-        <!-- LEFT -->
-
-        <div>
-
-          <h2 id="header-message">
-
-            Financial clarity starts here.
-
-          </h2>
-
-          <p>
-
-            Stay aware of every expense and every goal.
-
-          </p>
-
-        </div>
-
-
-
-        <!-- RIGHT -->
-
-        <div class="header-right">
-
-
-          <!-- DATE -->
-
-          <div class="live-date-card">
-
-            <i class="ri-calendar-line"></i>
-
-            <div>
-
-              <strong id="live-date">
-                Friday, 29 May 2026
-              </strong>
-
-              <span id="live-time">
-                10:42 PM
-              </span>
-
-            </div>
-
+      <div>
+        <div class="brand-area">
+          <div class="brand-logo">S</div>
+          <div>
+            <h1>SpendLess</h1>
+            <p>Track every penny wisely.</p>
           </div>
+        </div>
 
-
-
-          <!-- THEME -->
-
-          <button id="theme-toggle">
-
-            <i class="ri-moon-clear-line"></i>
-
+        <nav class="sidebar-nav">
+          <button class="nav-item active-nav" data-section="overview-section">
+            <i class="ri-dashboard-horizontal-line"></i>
+            <span>Overview</span>
           </button>
 
+          <button class="nav-item" data-section="transactions-section">
+            <i class="ri-exchange-funds-line"></i>
+            <span>Transactions</span>
+          </button>
+
+          <button class="nav-item" data-section="calendar-section">
+            <i class="ri-calendar-event-line"></i>
+            <span>Calendar</span>
+          </button>
+
+          <button class="nav-item" data-section="budgets-section">
+            <i class="ri-pie-chart-line"></i>
+            <span>Budgets</span>
+          </button>
+
+          <button class="nav-item" data-section="profile-section">
+            <i class="ri-user-3-line"></i>
+            <span>Profile</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="finance-health-card">
+        <div class="health-top">
+          <span>Financial Health</span>
+          <strong id="health-score">0%</strong>
         </div>
 
-      </header>
+        <div class="health-progress">
+          <div id="health-fill" class="health-fill"></div>
+        </div>
 
+        <p id="health-message">Start tracking your money</p>
+      </div>
+    </aside>
 
+    <main class="main-content">
+      <header class="main-header">
+        <div>
+          <h2 id="header-message">Financial clarity starts here.</h2>
+          <p>Stay aware of every expense and every goal.</p>
+        </div>
 
-      <!-- ====================================== -->
-      <!-- OVERVIEW SECTION -->
-      <!-- ====================================== -->
-
-      <section
-        id="overview-section"
-        class="page-section active-section"
-      >
-
-
-        <!-- HERO SECTION -->
-
-        <div class="hero-grid">
-
-
-          <!-- MAIN HERO -->
-
-          <div class="hero-balance-card">
-
-            <div class="hero-top">
-
-              <div>
-
-                <span>
-                  Total Available Balance
-                </span>
-
-                <h1 id="total-balance">
-                  ₹0
-                </h1>
-
-              </div>
-
-
-              <div class="hero-icon">
-
-                <i class="ri-wallet-3-line"></i>
-
-              </div>
-
+        <div class="header-right">
+          <div class="live-date-card">
+            <i class="ri-calendar-line"></i>
+            <div>
+              <strong id="live-date">Loading date...</strong>
+              <span id="live-time">Loading time...</span>
             </div>
-
-
-            <div class="hero-stats">
-
-
-              <div>
-
-                <p>
-                  Monthly Income
-                </p>
-
-                <h3 id="income-display">
-                  ₹95,000
-                </h3>
-
-              </div>
-
-
-              <div>
-
-                <p>
-                  Total Spent
-                </p>
-
-                <h3 id="expense-display">
-                  ₹0
-                </h3>
-
-              </div>
-
-
-              <div>
-
-                <p>
-                  Savings Rate
-                </p>
-
-                <h3 id="savings-rate">
-                  0%
-                </h3>
-
-              </div>
-
-            </div>
-
           </div>
 
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <i class="ri-moon-clear-line"></i>
+          </button>
+        </div>
+      </header>
 
-<!-- GOALS -->
+      <section id="overview-section" class="page-section active-section">
+        <div class="hero-grid">
+          <div class="hero-balance-card">
+            <div class="hero-top">
+              <div>
+                <span>Total Available Balance</span>
+                <h1 id="total-balance">₹0</h1>
+              </div>
 
-<div class="goals-wrapper">
+              <div class="hero-icon">
+                <i class="ri-wallet-3-line"></i>
+              </div>
+            </div>
 
-  <div class="goals-header">
+            <div class="hero-stats">
+              <div>
+                <p>Monthly Income</p>
+                <h3 id="income-display">₹0</h3>
+              </div>
 
-    <div>
+              <div>
+                <p>Total Spent</p>
+                <h3 id="expense-display">₹0</h3>
+              </div>
 
-      <h3>
-        Savings Goals
-      </h3>
+              <div>
+                <p>Savings Rate</p>
+                <h3 id="savings-rate">0%</h3>
+              </div>
+            </div>
+          </div>
 
-      <p>
-        Track your personal targets
-      </p>
+          <div class="goals-wrapper">
+            <div class="goals-header">
+              <div>
+                <h3>Savings Goals</h3>
+                <p>Track your personal targets.</p>
+              </div>
 
-    </div>
+              <button id="add-goal-btn" aria-label="Add goal">
+                <i class="ri-add-line"></i>
+              </button>
+            </div>
 
-
-    <button id="add-goal-btn">
-
-      <i class="ri-add-line"></i>
-
-    </button>
-
-  </div>
-
-
-  <div id="goals-grid"></div>
-
-</div>
-
-        <!-- ANALYTICS -->
+            <div id="goals-grid"></div>
+          </div>
+        </div>
 
         <div class="analytics-layout">
-
-
-          <!-- DONUT -->
-
           <div class="analytics-card">
-
             <div class="card-title-row">
-
-              <h3>
-                Expense Breakdown
-              </h3>
-
+              <h3>Expense Breakdown</h3>
               <i class="ri-donut-chart-line"></i>
-
             </div>
 
             <canvas id="expenseChart"></canvas>
-
           </div>
 
-
-
-          <!-- TREND -->
-
           <div class="analytics-card">
-
             <div class="trend-header">
-
               <div class="card-title-row">
-
-                <h3>
-                  Spending Trend
-                </h3>
-
+                <h3>Spending Trend</h3>
                 <i class="ri-line-chart-line"></i>
-
               </div>
-
 
               <div class="trend-filters">
-
-                <button class="trend-btn active-trend">
-                  Daily
-                </button>
-
-                <button class="trend-btn">
-                  Weekly
-                </button>
-
-                <button class="trend-btn">
-                  Monthly
-                </button>
-
+                <button class="trend-btn active-trend">Daily</button>
+                <button class="trend-btn">Weekly</button>
+                <button class="trend-btn">Monthly</button>
               </div>
-
             </div>
 
             <canvas id="trendChart"></canvas>
-
           </div>
-
         </div>
-
-
-
-        <!-- INSIGHTS -->
 
         <div class="insight-section">
-
           <div class="section-title">
-
-            <h3>
-              Smart Insights
-            </h3>
-
+            <h3>Smart Insights</h3>
           </div>
 
-
-          <div
-            id="insight-grid"
-            class="insight-grid"
-          >
-
-          </div>
-
+          <div id="insight-grid" class="insight-grid"></div>
         </div>
-
-
-
-        <!-- QUICK ACTIONS -->
 
         <div class="quick-actions">
-
-
-          <button
-            class="quick-action"
-            data-category="Food"
-          >
-
-            🍔 Food
-
-          </button>
-
-
-          <button
-            class="quick-action"
-            data-category="Transport"
-          >
-
-            🚕 Transport
-
-          </button>
-
-
-          <button
-            class="quick-action"
-            data-category="Travel"
-          >
-
-            ✈️ Travel
-
-          </button>
-
-
-          <button
-            class="quick-action"
-            data-category="Shopping"
-          >
-
-            🛍 Shopping
-
-          </button>
-
-
-          <button
-            class="quick-action"
-            data-category="Bills"
-          >
-
-            💡 Bills
-
-          </button>
-
+          <button class="quick-action" data-category="Food">🍔 Food</button>
+          <button class="quick-action" data-category="Transport">🚕 Transport</button>
+          <button class="quick-action" data-category="Travel">✈️ Travel</button>
+          <button class="quick-action" data-category="Shopping">🛍 Shopping</button>
+          <button class="quick-action" data-category="Bills">💡 Bills</button>
         </div>
-
       </section>
 
-
-
-      <!-- ====================================== -->
-      <!-- TRANSACTIONS SECTION -->
-      <!-- ====================================== -->
-
-      <section
-        id="transactions-section"
-        class="page-section"
-      >
-
-
-        <!-- TOP -->
-
+      <section id="transactions-section" class="page-section">
         <div class="section-top-row">
-
-
           <div>
-
-            <h2>
-              Transactions
-            </h2>
-
-            <p>
-              Monitor and manage all your expenses.
-            </p>
-
+            <h2>Transactions</h2>
+            <p>Monitor and manage all your expenses.</p>
           </div>
-
-
-
-          <!-- SEARCH -->
 
           <div class="search-container">
-
             <i class="ri-search-line"></i>
-
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Search transactions..."
-            />
-
+            <input type="text" id="search-input" placeholder="Search transactions..." />
           </div>
-
         </div>
-
-
-
-        <!-- FILTERS -->
 
         <div class="filter-container">
-
-          <button class="filter-btn active-filter">
-            All
-          </button>
-
-          <button class="filter-btn">
-            Food
-          </button>
-
-          <button class="filter-btn">
-            Transport
-          </button>
-
-          <button class="filter-btn">
-            Travel
-          </button>
-
-          <button class="filter-btn">
-            Shopping
-          </button>
-
-          <button class="filter-btn">
-            Bills
-          </button>
-
-          <button class="filter-btn">
-            Investments
-          </button>
-
+          <button class="filter-btn active-filter">All</button>
+          <button class="filter-btn">Food</button>
+          <button class="filter-btn">Transport</button>
+          <button class="filter-btn">Travel</button>
+          <button class="filter-btn">Shopping</button>
+          <button class="filter-btn">Bills</button>
+          <button class="filter-btn">Investments</button>
         </div>
 
-
-
-        <!-- TRANSACTION LIST -->
-
-        <div
-          id="transaction-list"
-          class="transaction-list"
-        >
-
-        </div>
-
+        <div id="transaction-list" class="transaction-list"></div>
       </section>
 
-
-
-      <!-- ====================================== -->
-      <!-- CALENDAR SECTION -->
-      <!-- ====================================== -->
-
-      <section
-        id="calendar-section"
-        class="page-section"
-      >
-
-
+      <section id="calendar-section" class="page-section">
         <div class="section-top-row">
-
           <div>
-
-            <h2>
-              Expense Calendar
-            </h2>
-
-            <p>
-              Visualize your daily spending activity.
-            </p>
-
+            <h2>Expense Calendar</h2>
+            <p>Visualize your daily spending activity.</p>
           </div>
-
         </div>
-
-
-
-        <!-- CALENDAR -->
 
         <div class="calendar-card">
-
           <div id="expense-calendar"></div>
-
         </div>
-
       </section>
 
-
-
-      <!-- ====================================== -->
-      <!-- BUDGET SECTION -->
-      <!-- ====================================== -->
-
-      <section
-        id="budgets-section"
-        class="page-section"
-      >
-
-
+      <section id="budgets-section" class="page-section">
         <div class="section-top-row">
-
           <div>
-
-            <h2>
-              Monthly Budgets
-            </h2>
-
-            <p>
-              Stay within your financial limits.
-            </p>
-
+            <h2>Monthly Budgets</h2>
+            <p>Stay within your financial limits.</p>
           </div>
-
         </div>
 
-
-
-        <!-- BUDGET GRID -->
-
-        <div
-          id="budget-grid"
-          class="budget-grid"
-        >
-
-        </div>
-
+        <div id="budget-grid" class="budget-grid"></div>
       </section>
 
-
-
-      <!-- ====================================== -->
-      <!-- PROFILE SECTION -->
-      <!-- ====================================== -->
-
-      <section
-        id="profile-section"
-        class="page-section"
-      >
-
-
+      <section id="profile-section" class="page-section">
         <div class="section-top-row">
-
           <div>
-
-            <h2>
-              Profile & Preferences
-            </h2>
-
-            <p>
-              Customize your financial experience.
-            </p>
-
+            <h2>Profile & Preferences</h2>
+            <p>Customize your financial experience.</p>
           </div>
-
         </div>
-
-
-
-        <!-- PROFILE GRID -->
 
         <div class="profile-grid">
-
-
-          <!-- INCOME -->
-
           <div class="profile-card">
-
             <div class="profile-icon emerald">
-
               <i class="ri-wallet-line"></i>
-
             </div>
 
-            <h3>
-              Monthly Income
-            </h3>
-
-            <input
-              type="number"
-              id="income-input"
-              placeholder="Enter monthly income"
-            />
-
-            <button id="save-income-btn">
-
-              Save Income
-
-            </button>
-
+            <h3>Monthly Income</h3>
+            <input type="number" id="income-input" placeholder="Enter monthly income" />
+            <button id="save-income-btn">Save Income</button>
           </div>
 
-
-
-          <!-- THEME -->
-
           <div class="profile-card">
-
             <div class="profile-icon blue">
-
               <i class="ri-moon-clear-line"></i>
-
             </div>
 
-            <h3>
-              Theme Preference
-            </h3>
-
-            <p>
-              Switch between light and dark mode.
-            </p>
-
-            <button id="theme-btn">
-
-              Toggle Theme
-
-            </button>
-
+            <h3>Theme Preference</h3>
+            <p>Switch between light and dark mode.</p>
+            <button id="theme-btn">Toggle Theme</button>
           </div>
-
-
-
-          <!-- EXPORT -->
 
           <div class="profile-card">
-
             <div class="profile-icon orange">
-
               <i class="ri-download-2-line"></i>
-
             </div>
 
-            <h3>
-              Export Data
-            </h3>
-
-            <p>
-              Backup your financial records safely.
-            </p>
-
-            <button id="export-btn">
-
-              Export JSON
-
-            </button>
-
+            <h3>Export Data</h3>
+            <p>Backup your financial records safely.</p>
+            <button id="export-btn">Export JSON</button>
           </div>
-
-
-
-          <!-- RESET -->
 
           <div class="profile-card danger-card">
-
             <div class="profile-icon red">
-
               <i class="ri-delete-bin-6-line"></i>
-
             </div>
 
-            <h3>
-              Reset Application
-            </h3>
-
-            <p>
-              Permanently clear all stored data.
-            </p>
-
-            <button id="reset-btn">
-
-              Clear Data
-
-            </button>
-
+            <h3>Reset Application</h3>
+            <p>Permanently clear all stored data.</p>
+            <button id="reset-btn">Clear Data</button>
           </div>
-
         </div>
-
       </section>
-
     </main>
-
   </div>
 
-
-
-  <!-- ====================================== -->
-  <!-- FLOATING ACTION BUTTON -->
-  <!-- ====================================== -->
-
-  <button id="add-expense-btn">
-
+  <button id="add-expense-btn" aria-label="Add expense">
     <i class="ri-add-line"></i>
-
   </button>
 
-
-
-  <!-- ====================================== -->
-  <!-- ADD EXPENSE MODAL -->
-  <!-- ====================================== -->
-
   <div id="modal-overlay">
-
-
     <div class="expense-modal">
-
-
-      <!-- HEADER -->
-
       <div class="modal-top">
+        <h2>Add Expense</h2>
 
-        <h2>
-          Add Expense
-        </h2>
-
-        <button id="close-modal">
-
+        <button id="close-modal" aria-label="Close modal">
           <i class="ri-close-line"></i>
-
         </button>
-
       </div>
 
-
-
-      <!-- FORM -->
-
       <form id="expense-form">
-
-
-        <!-- TITLE -->
-
         <div class="input-group">
-
-          <label>
-            Expense Title
-          </label>
-
-          <input
-            type="text"
-            id="expense-title"
-            placeholder="Ex: Swiggy Order"
-            required
-          />
-
+          <label for="expense-title">Expense Title</label>
+          <input type="text" id="expense-title" placeholder="Ex: Swiggy Order" required />
         </div>
 
-
-
-        <!-- AMOUNT -->
-
         <div class="input-group">
-
-          <label>
-            Amount
-          </label>
-
-          <input
-            type="number"
-            id="expense-amount"
-            placeholder="₹ Amount"
-            required
-          />
-
+          <label for="expense-amount">Amount</label>
+          <input type="number" id="expense-amount" placeholder="₹ Amount" required />
         </div>
 
-
-
-        <!-- CATEGORY -->
-
         <div class="input-group">
-
-          <label>
-            Category
-          </label>
-
+          <label for="expense-category">Category</label>
           <select id="expense-category">
-
             <option>Food</option>
-
             <option>Transport</option>
-
             <option>Travel</option>
-
             <option>Shopping</option>
-
             <option>Investments</option>
-
             <option>Bills</option>
-
             <option>Rent</option>
-
             <option>Groceries</option>
-
             <option>Entertainment</option>
-
           </select>
-
         </div>
-
-
-
-        <!-- DATE -->
 
         <div class="input-group">
-
-          <label>
-            Date
-          </label>
-
-          <input
-            type="date"
-            id="expense-date"
-            required
-          />
-
+          <label for="expense-date">Date</label>
+          <input type="date" id="expense-date" required />
         </div>
-
-
-
-        <!-- NOTE -->
 
         <div class="input-group">
-
-          <label>
-            Note
-          </label>
-
-          <textarea
-            id="expense-note"
-            placeholder="Optional note..."
-          ></textarea>
-
+          <label for="expense-note">Note</label>
+          <textarea id="expense-note" placeholder="Optional note..."></textarea>
         </div>
 
-
-
-        <!-- SUBMIT -->
-
-        <button
-          type="submit"
-          id="submit-expense-btn"
-        >
-
-          Add Expense
-
-        </button>
-
+        <button type="submit" id="submit-expense-btn">Add Expense</button>
       </form>
-
     </div>
-
   </div>
 
-  <div id="toast">
-
-    Action Completed
-
-  </div>
-
-  <script src="script.js"></script>
-
+  <div id="toast">Action Completed</div>
 </body>
-
 </html>
