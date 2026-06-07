@@ -1,88 +1,117 @@
-# 💰 SpendLess - Personal Budget Tracker
+<p align="center">
+  <img src="./spendlessfevicon.png" alt="SpendLess Logo" width="250">
+</p>
 
-SpendLess is a lightweight, browser-based personal finance tracker that helps users manage income and expenses efficiently. It provides real-time balance updates and persistent storage using LocalStorage, making it simple and practical for everyday budgeting.
----
+# 💰 SpendLess
 
-## ▶️ Getting Started
+**Track Every Penny Wisely.**
 
-### Visit Here 
+SpendLess is a personal finance tracker that I built to help users keep track of their income, expenses, savings goals, and monthly budgets in a simple way.
+
+The idea behind this project was to create something practical that people can actually use in day-to-day life instead of just building another CRUD application. It allows users to record expenses, visualize spending patterns, monitor savings goals, and stay aware of where their money is going.
+
+### 🔗 Live Demo
+
 https://spendless-managingspendings.netlify.app/
 
 ---
 
-## 🚀 Features
+## Features
 
-- 📊 Add and manage income and expenses
-- 💸 Track total balance in real-time
-- 🧾 Categorized expense list (e.g., Rent, Food, Utilities)
-- 🗑️ Delete individual expenses
-- 💾 Persistent data storage using `localStorage`
-- ⚡ Instant UI updates without page refresh
-- 📱 Simple and responsive design
-
----
-
-## 🛠️ Tech Stack
-
-- HTML5 – Structure
-- CSS3 – Styling
-- Vanilla JavaScript (ES6) – Logic & functionality
-- LocalStorage API – Data persistence
+* Add, edit, and delete expenses
+* Categorize expenses for better tracking
+* Track monthly income and remaining balance
+* Create and manage multiple savings goals
+* View expense breakdown through charts
+* Monitor spending trends over time
+* Calendar view for daily expense tracking
+* Category-wise budget monitoring
+* Financial health indicator
+* Export data as JSON
+* Light and Dark mode
+* Fully responsive design
 
 ---
 
-## 📂 Project Structure
-```
-spendless/
+## Tech Stack
+
+* HTML5
+* CSS3
+* JavaScript (ES6)
+* Chart.js
+* FullCalendar.js
+* LocalStorage API
+* Remix Icons
+
+---
+
+## Project Structure
+
+```text
+SpendLess/
 │
 ├── index.html
 ├── style.css
 ├── script.js
+├── spendlessfevicon.png
 └── README.md
 ```
----
-
-## ⚙️ How It Works
-
-1. User sets an initial income (default value is used if not provided).
-2. Expenses are stored as objects with:
-   - id
-   - title
-   - amount
-3. Data is saved in localStorage to persist across sessions.
-4. UI automatically recalculates:
-   - Total Income
-   - Total Expenses
-   - Remaining Balance
 
 ---
 
-## 💡 Example Default Data
+## Why I Built This
 
-- Income: 10000
-- Expenses:
-  - House Rent → 5000
-  - Food → 2000
+While learning JavaScript, I wanted to build a project that involved real-world data handling, DOM manipulation, LocalStorage, charts, filtering, and responsive design.
 
----
+Instead of creating a simple expense calculator, I decided to build a complete personal finance tracker with analytics, goals, budgets, and calendar-based tracking.
 
-## 📌 Future Improvements
+This project helped me improve my understanding of:
 
-- Add monthly reports & charts
-- Add login system
-- Cloud sync using backend (Spring Boot / Node.js)
-- Category-wise analytics
-- Dark mode UI
+* JavaScript fundamentals
+* LocalStorage
+* Dynamic UI rendering
+* Data visualization
+* Responsive design
+* User experience design
 
 ---
 
-## 🧑‍💻 Author
+## Current Functionality
 
-Built by: Tanvi Pohankar  
-For learning and portfolio purposes.
+Users can:
+
+1. Set monthly income
+2. Add expenses with categories and dates
+3. Track spending activity
+4. Monitor savings goals
+5. View analytics and insights
+6. Check expenses on a calendar
+7. Export data for backup
+
+All data is stored locally in the browser.
 
 ---
 
-## 📜 License
+## Future Improvements
 
-This project is open-source and free to use for learning purposes.
+Some features I would like to add in future versions:
+
+* Custom budget creation
+* Recurring expenses
+* Monthly reports
+* Data import functionality
+* Backend integration
+* Cloud synchronization
+
+---
+
+## Author
+
+**Tanvi Pohankar**
+
+* Portfolio: https://tanvi.dev
+* LinkedIn: https://www.linkedin.com/in/tanvipohankar
+
+---
+
+If you like the project, feel free to star the repository.
